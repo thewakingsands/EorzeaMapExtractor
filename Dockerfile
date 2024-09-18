@@ -8,4 +8,4 @@ COPY --from=builder /src/EorzeaMapExtractor.Cli/bin/Release/net7.0/ /app
 ENV WINEARCH=win32
 RUN winetricks gdiplus && \
   rm -rf /root/.cache
-ENTRYPOINT [ "wine" "/dotnet/win32/dotnet.exe" "/app/EorzeaMapExtractor.Cli.dll" ]
+ENTRYPOINT [ "wine", "/dotnet/win32/dotnet.exe", "/app/EorzeaMapExtractor.Cli.dll" ]
